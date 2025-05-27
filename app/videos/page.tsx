@@ -21,7 +21,7 @@ const teacherVideos = [
   {
     id: 2,
     title: "Memories and Wishes",
-    teacher: "Mr. Robert Smith",
+    teacher: "Mr. Tk Sahu",
     subject: "Mathematics",
     thumbnail: "/placeholder.svg?height=200&width=350&text=Math+Teacher",
     duration: "3:15",
@@ -30,7 +30,7 @@ const teacherVideos = [
   {
     id: 3,
     title: "Future Advice",
-    teacher: "Ms. Emily Davis",
+    teacher: "Ms. Jaya Ghosh",
     subject: "Science",
     thumbnail: "/placeholder.svg?height=200&width=350&text=Science+Teacher",
     duration: "5:47",
@@ -39,7 +39,7 @@ const teacherVideos = [
   {
     id: 4,
     title: "Memorable Moments",
-    teacher: "Mr. James Wilson",
+    teacher: "Mr. Shukhtel",
     subject: "History",
     thumbnail: "/placeholder.svg?height=200&width=350&text=History+Teacher",
     duration: "4:10",
@@ -48,7 +48,7 @@ const teacherVideos = [
   {
     id: 5,
     title: "Words of Wisdom",
-    teacher: "Mrs. Lisa Brown",
+    teacher: "Mrs. Seema Philips",
     subject: "English",
     thumbnail: "/placeholder.svg?height=200&width=350&text=English+Teacher",
     duration: "3:58",
@@ -57,7 +57,7 @@ const teacherVideos = [
   {
     id: 6,
     title: "Farewell Speech",
-    teacher: "Mr. Michael Garcia",
+    teacher: "Mr. Panda Sir",
     subject: "Physical Education",
     thumbnail: "/placeholder.svg?height=200&width=350&text=PE+Teacher",
     duration: "2:45",

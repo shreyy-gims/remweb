@@ -92,7 +92,7 @@ export default function Home() {
             />
             <NomineeCard
               name="Varnika Yadav"
-              photo="/varnika.jpeg"
+              photo="/shreya.jpeg"
               category="Most Athletic"
               achievements={["Basketball Team Captain", "Track & Field Champion", "Sports MVP"]}
               skills={["Basketball", "Running", "Team Leadership"]}

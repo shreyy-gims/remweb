@@ -18,7 +18,7 @@ export default function EventDetailsPage() {
         >
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Event Details</h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            All the information you need about our farewell event, including venue, date, time, rules, and schedule.
+            This is a Demo Webpage , not even a single information is correct here!
           </p>
         </motion.div>
 
