@@ -15,8 +15,8 @@ const teamMembers = [
     role: "Event Manager",
     photo: "/mario.jpeg",
     description: "Coordinated all aspects of the farewell event, ensuring everything runs smoothly.",
-    bio: "Alex has been organizing school events for the past 3 years. With exceptional leadership skills and attention to detail, he has successfully managed multiple events including last year's annual day celebration.",
-    achievements: ["Best Event Organizer Award 2024", "Student Council President", "Leadership Camp Graduate"],
+    bio: "Maria has been participating in school events for the past 3 years. With exceptional leadership skills and attention to detail,she has successfully managed multiple events including last year's annual day celebration.",
+    achievements: ["Class 11th Arts Topper", "Dancer", "Leadership Camp Graduate"],
     social: {
       instagram: "https://www.instagram.com/mariaakujur?igsh=eGpyMmpjYWs2MXY0",
       whatsapp: "https://wa.me/1234567890",
@@ -45,7 +45,7 @@ const teamMembers = [
     role: "Collection Head",
     photo: "/jenni.jpeg",
     description: "Managed fundraising and budget allocation for all farewell activities.",
-    bio: "Michael has a talent for financial management and fundraising. His strategic approach to budgeting has helped maximize resources for school events while ensuring fiscal responsibility.",
+    bio: "Jennifer has a talent for financial management and fundraising. Her strategic approach to budgeting has helped maximize resources for school events while ensuring fiscal responsibility.",
     achievements: ["Treasurer of Student Council", "Economics Club Leader", "Fundraising Record Holder"],
     social: {
       instagram: "https://www.instagram.com/_.jennifferrr._?igsh=dmF6enMxZmd1dTMz",
@@ -60,7 +60,7 @@ const teamMembers = [
     role: "Content Coordinator",
     photo: "/gauri.jpeg",
     description: "Created and curated all digital content for the farewell website and social media.",
-    bio: "Emma has a passion for digital media and storytelling. Her ability to capture the essence of events through compelling content has made her an invaluable asset to the team.",
+    bio: "Gauri has a passion for digital media and storytelling. Her ability to capture the essence of events through compelling content has made her an invaluable asset to the team.",
     achievements: ["Digital Media Award", "School Blog Editor", "Photography Contest Winner"],
     social: {
       instagram: "https://www.instagram.com/_gaurisharma._?igsh=enR0dTF0dHRzajI4",
@@ -75,7 +75,7 @@ const teamMembers = [
     role: "Technical Director",
     photo: "/vinayak.jpeg",
     description: "Managed all technical aspects including sound, lighting, and audiovisual elements.",
-    bio: "David is the go-to person for all things technical. His expertise in sound engineering and lighting design has elevated the production quality of numerous school events.",
+    bio: "Vinayak is the go-to person for all things technical. His expertise in sound engineering and lighting design has elevated the production quality of numerous school events.",
     achievements: ["Tech Club President", "Robotics Competition Winner", "AV Team Lead"],
     social: {
       instagram: "https://instagram.com/david_tech",
@@ -234,13 +234,13 @@ export default function TeamPage() {
               <SocialButton
                 icon={<Instagram className="h-5 w-5" />}
                 label="@farewell_2025"
-                href="https://instagram.com/farewell_2025"
+                href="https://www.instagram.com/reminisce_2k25?igsh=Nm4yM2Q5ZnRyMGwy"
                 color="from-purple-600 to-pink-600"
               />
               <SocialButton
                 icon={<Phone className="h-5 w-5" />}
                 label="WhatsApp Group"
-                href="https://chat.whatsapp.com/farewell2025"
+                href="https://chat.whatsapp.com/JpnsDEX9mJ37VgroUT9vz6"
                 color="from-green-600 to-green-500"
               />
             </div>
@@ -262,28 +262,28 @@ export default function TeamPage() {
                   <div className="space-y-4">
                     <FeeItem
                       title="Food & Refreshments"
-                      amount={600}
+                      amount={10}
                       description="Gourmet dinner and refreshments throughout the event"
                       icon={<Coffee />}
                       color="text-yellow-500"
                     />
                     <FeeItem
                       title="Venue & Decorations"
-                      amount={300}
+                      amount={20}
                       description="Premium venue with elegant decorations"
                       icon={<Palette />}
                       color="text-blue-500"
                     />
                     <FeeItem
                       title="Entertainment"
-                      amount={200}
+                      amount={30}
                       description="Live music, performances and activities"
                       icon={<Music />}
                       color="text-green-500"
                     />
                     <FeeItem
                       title="Souvenirs & Gifts"
-                      amount={199}
+                      amount={40}
                       description="Personalized mementos to remember the occasion"
                       icon={<Heart />}
                       color="text-red-500"
@@ -293,7 +293,7 @@ export default function TeamPage() {
                   <div className="mt-6 pt-4 border-t border-gray-700 flex justify-between items-center">
                     <div>
                       <p className="text-gray-400 text-sm">Total Amount</p>
-                      <p className="text-2xl font-bold text-white">₹1,299</p>
+                      <p className="text-2xl font-bold text-white">100</p>
                     </div>
                     <Button className="bg-purple-600 hover:bg-purple-700">Get Your Pass</Button>
                   </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -10,6 +11,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { FcGoogle } from "react-icons/fc"
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { auth } from "@/firebase/config"
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -21,25 +24,73 @@ export default function SignupPage() {
     section: "",
   })
   const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSelectChange = (name, value) => {
+  const handleSelectChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
+    try {
+      const userCred = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
+      const idToken = await userCred.user.getIdToken()
 
-    // Simulate API call
-    setTimeout(() => {
+      await fetch("/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${idToken}`,
+        },
+        body: JSON.stringify({
+          uid: userCred.user.uid,
+          ...formData,
+        }),
+      })
+
+      router.push("/login") // redirect after success
+    } catch (error: any) {
+      console.error("Signup error:", error.message)
+    } finally {
       setIsLoading(false)
-      // Handle signup logic here
-    }, 1500)
+    }
+  }
+
+  const handleGoogleSignup = async () => {
+    setIsLoading(true)
+    try {
+      const provider = new GoogleAuthProvider()
+      const result = await signInWithPopup(auth, provider)
+      const idToken = await result.user.getIdToken()
+
+      await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${idToken}`,
+        },
+        body: JSON.stringify({
+          uid: result.user.uid,
+          name: result.user.displayName,
+          email: result.user.email,
+          gender: formData.gender,
+          class: formData.class,
+          section: formData.section,
+        }),
+      })
+
+      router.push("/login")
+    } catch (error: any) {
+      console.error("Google signup error:", error.message)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -54,15 +105,17 @@ export default function SignupPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <Button variant="outline" className="w-full border-gray-700 bg-gray-800 hover:bg-gray-700 text-white">
-                  <FcGoogle className="mr-2 h-4 w-4" />
-                  Sign up with Google
-                </Button>
-              </div>
+              <Button
+                variant="outline"
+                className="w-full border-gray-700 bg-gray-800 hover:bg-gray-700 text-white"
+                onClick={handleGoogleSignup}
+              >
+                <FcGoogle className="mr-2 h-4 w-4" />
+                Sign up with Google
+              </Button>
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
-                  <span className="w-full border-t border-gray-700"></span>
+                  <span className="w-full border-t border-gray-700" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
                   <span className="bg-gray-800 px-2 text-gray-400">Or continue with</span>
@@ -70,9 +123,7 @@ export default function SignupPage() {
               </div>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-white">
-                    Full Name
-                  </Label>
+                  <Label htmlFor="name" className="text-white">Full Name</Label>
                   <Input
                     id="name"
                     name="name"
@@ -84,9 +135,7 @@ export default function SignupPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-white">
-                    Email
-                  </Label>
+                  <Label htmlFor="email" className="text-white">Email</Label>
                   <Input
                     id="email"
                     name="email"
@@ -99,9 +148,7 @@ export default function SignupPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="text-white">
-                    Password
-                  </Label>
+                  <Label htmlFor="password" className="text-white">Password</Label>
                   <Input
                     id="password"
                     name="password"
@@ -119,31 +166,17 @@ export default function SignupPage() {
                     onValueChange={(value) => handleSelectChange("gender", value)}
                     className="flex space-x-4"
                   >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="male" id="male" className="border-gray-600 text-purple-500" />
-                      <Label htmlFor="male" className="text-gray-300">
-                        Male
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="female" id="female" className="border-gray-600 text-purple-500" />
-                      <Label htmlFor="female" className="text-gray-300">
-                        Female
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="other" id="other" className="border-gray-600 text-purple-500" />
-                      <Label htmlFor="other" className="text-gray-300">
-                        Other
-                      </Label>
-                    </div>
+                    {["male", "female", "other"].map((g) => (
+                      <div key={g} className="flex items-center space-x-2">
+                        <RadioGroupItem value={g} id={g} className="border-gray-600 text-purple-500" />
+                        <Label htmlFor={g} className="text-gray-300 capitalize">{g}</Label>
+                      </div>
+                    ))}
                   </RadioGroup>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="class" className="text-white">
-                      Class
-                    </Label>
+                    <Label htmlFor="class" className="text-white">Class</Label>
                     <Select value={formData.class} onValueChange={(value) => handleSelectChange("class", value)}>
                       <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
                         <SelectValue placeholder="Select" />
@@ -156,22 +189,15 @@ export default function SignupPage() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="section" className="text-white">
-                      Section
-                    </Label>
+                    <Label htmlFor="section" className="text-white">Section</Label>
                     <Select value={formData.section} onValueChange={(value) => handleSelectChange("section", value)}>
                       <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
                       <SelectContent className="bg-gray-800 border-gray-700 text-white">
-                        <SelectItem value="A">Section A</SelectItem>
-                        <SelectItem value="B">Section B</SelectItem>
-                        <SelectItem value="C">Section C</SelectItem>
-                        <SelectItem value="D">Section D</SelectItem>
-                        <SelectItem value="E">Section E</SelectItem>
-                        <SelectItem value="F">Section F</SelectItem>
-                        <SelectItem value="G">Section G</SelectItem>
-                        <SelectItem value="H">Section H</SelectItem>
+                        {["A", "B", "C", "D", "E", "F", "G", "H"].map((s) => (
+                          <SelectItem key={s} value={s}>Section {s}</SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>

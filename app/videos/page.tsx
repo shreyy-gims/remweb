@@ -7,6 +7,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+// Helper to extract YouTube video ID
+function getYouTubeId(url: string): string | null {
+  const regExp = /^.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/
+  const match = url.match(regExp)
+  return match && match[1].length === 11 ? match[1] : null
+}
+
 // Mock data for teacher videos
 const teacherVideos = [
   {
@@ -25,7 +32,7 @@ const teacherVideos = [
     subject: "Mathematics",
     thumbnail: "/placeholder.svg?height=200&width=350&text=Math+Teacher",
     duration: "3:15",
-    videoUrl: "https://example.com/video2.mp4",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
   {
     id: 3,
@@ -34,7 +41,7 @@ const teacherVideos = [
     subject: "Science",
     thumbnail: "/placeholder.svg?height=200&width=350&text=Science+Teacher",
     duration: "5:47",
-    videoUrl: "https://example.com/video3.mp4",
+    videoUrl: "https://www.w3schools.com/html/movie.mp4",
   },
   {
     id: 4,
@@ -43,7 +50,7 @@ const teacherVideos = [
     subject: "History",
     thumbnail: "/placeholder.svg?height=200&width=350&text=History+Teacher",
     duration: "4:10",
-    videoUrl: "https://example.com/video4.mp4",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
   {
     id: 5,
@@ -52,7 +59,7 @@ const teacherVideos = [
     subject: "English",
     thumbnail: "/placeholder.svg?height=200&width=350&text=English+Teacher",
     duration: "3:58",
-    videoUrl: "https://example.com/video5.mp4",
+    videoUrl: "https://www.w3schools.com/html/movie.mp4",
   },
   {
     id: 6,
@@ -61,12 +68,12 @@ const teacherVideos = [
     subject: "Physical Education",
     thumbnail: "/placeholder.svg?height=200&width=350&text=PE+Teacher",
     duration: "2:45",
-    videoUrl: "https://example.com/video6.mp4",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
 ]
 
 export default function VideosPage() {
-  const [selectedVideo, setSelectedVideo] = useState(null)
+  const [selectedVideo, setSelectedVideo] = useState<any>(null)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [activeTab, setActiveTab] = useState("all")
 
@@ -85,7 +92,7 @@ export default function VideosPage() {
           return false
         })
 
-  const openVideoDialog = (video) => {
+  const openVideoDialog = (video: any) => {
     setSelectedVideo(video)
     setIsDialogOpen(true)
   }
@@ -108,18 +115,10 @@ export default function VideosPage() {
 
         <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full mb-8">
           <TabsList className="grid w-full grid-cols-4 max-w-md mx-auto bg-gray-800">
-            <TabsTrigger value="all" className="data-[state=active]:bg-purple-600">
-              All Videos
-            </TabsTrigger>
-            <TabsTrigger value="principal" className="data-[state=active]:bg-purple-600">
-              Principal
-            </TabsTrigger>
-            <TabsTrigger value="academic" className="data-[state=active]:bg-purple-600">
-              Academic
-            </TabsTrigger>
-            <TabsTrigger value="other" className="data-[state=active]:bg-purple-600">
-              Other
-            </TabsTrigger>
+            <TabsTrigger value="all" className="data-[state=active]:bg-purple-600">All Videos</TabsTrigger>
+            <TabsTrigger value="principal" className="data-[state=active]:bg-purple-600">Principal</TabsTrigger>
+            <TabsTrigger value="academic" className="data-[state=active]:bg-purple-600">Academic</TabsTrigger>
+            <TabsTrigger value="other" className="data-[state=active]:bg-purple-600">Other</TabsTrigger>
           </TabsList>
         </Tabs>
 
@@ -170,14 +169,22 @@ export default function VideosPage() {
             <DialogHeader>
               <DialogTitle className="text-xl font-bold">{selectedVideo?.title}</DialogTitle>
             </DialogHeader>
-            <div className="aspect-video bg-black rounded-md flex items-center justify-center">
-              {/* In a real app, this would be a video player */}
-              <div className="text-center p-6">
-                <Play className="h-16 w-16 text-purple-500 mx-auto mb-4" />
-                <p className="text-gray-400">
-                  This is a placeholder for the video player. In a real application, the video would play here.
-                </p>
-              </div>
+            <div className="aspect-video bg-black rounded-md overflow-hidden">
+              {selectedVideo?.videoUrl?.includes("youtube") || selectedVideo?.videoUrl?.includes("youtu.be") ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${getYouTubeId(selectedVideo.videoUrl)}`}
+                  title={selectedVideo?.title}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <video controls className="w-full h-full">
+                  <source src={selectedVideo?.videoUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              )}
             </div>
             <div className="mt-2">
               <div className="flex items-center text-gray-300 text-sm mb-2">

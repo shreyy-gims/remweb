@@ -78,22 +78,22 @@ const passAdvantages = [
 // Testimonials data
 const testimonials = [
   {
-    name: "Priya Sharma",
-    class: "Class 12-A",
+    name: "Pakhi Singh",
+    class: "Class 12-H",
     image: "/placeholder.svg?height=60&width=60",
     text: "The farewell pass was totally worth it! The food was amazing and the photo sessions were professional. Best memories ever!",
     rating: 5,
   },
   {
-    name: "Rahul Kumar",
+    name: "Rituraj",
     class: "Class 12-B",
     image: "/placeholder.svg?height=60&width=60",
     text: "I loved the VIP treatment and the exclusive souvenirs. The yearbook is something I'll treasure forever.",
     rating: 5,
   },
   {
-    name: "Ananya Patel",
-    class: "Class 12-C",
+    name: "Annora Lakra",
+    class: "Class 12-F",
     image: "/placeholder.svg?height=60&width=60",
     text: "The entertainment was top-notch! The live band and DJ kept everyone dancing all night. Highly recommend!",
     rating: 5,
@@ -197,7 +197,7 @@ export default function PassPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
-                Get Your Pass - ₹1,299
+                Get Your Pass - ₹100
               </Button>
               <Button
                 size="lg"
@@ -286,25 +286,25 @@ export default function PassPage() {
                     <div className="space-y-4">
                       <PricingItem
                         title="Premium Food & Beverages"
-                        amount={600}
+                        amount={10}
                         description="3-course gourmet meal, premium drinks, live food stations"
                         icon={<Coffee />}
                       />
                       <PricingItem
                         title="Venue & Decorations"
-                        amount={300}
+                        amount={20}
                         description="Elegant venue with professional decorations and lighting"
                         icon={<Palette />}
                       />
                       <PricingItem
                         title="Entertainment Package"
-                        amount={200}
+                        amount={30}
                         description="Live band, DJ, interactive games, and surprise acts"
                         icon={<Music />}
                       />
                       <PricingItem
                         title="Souvenirs & Photography"
-                        amount={199}
+                        amount={40}
                         description="Professional photos, yearbook, custom merchandise"
                         icon={<Camera />}
                       />
@@ -313,7 +313,7 @@ export default function PassPage() {
 
                   <div className="flex flex-col justify-center">
                     <div className="text-center p-8 bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl border border-purple-500/30">
-                      <div className="text-6xl font-bold text-white mb-2">₹1,299</div>
+                      <div className="text-6xl font-bold text-white mb-2">₹100</div>
                       <p className="text-purple-300 mb-6">All-Inclusive Pass</p>
                       <div className="space-y-3 mb-6">
                         <div className="flex items-center justify-center text-green-400">
@@ -368,8 +368,8 @@ export default function PassPage() {
                         <Phone className="h-5 w-5 text-purple-400 mr-3 mt-1" />
                         <div>
                           <p className="text-white font-medium">Phone</p>
-                          <p className="text-gray-400">+91 98765 43210</p>
-                          <p className="text-gray-400">+91 87654 32109</p>
+                          <p className="text-gray-400">+91 93406 79336</p>
+                          <p className="text-gray-400">+91 80858 51573</p>
                         </div>
                       </div>
                       <div className="flex items-start">
@@ -492,6 +492,8 @@ export default function PassPage() {
                               <SelectItem value="D">Section D</SelectItem>
                               <SelectItem value="E">Section E</SelectItem>
                               <SelectItem value="F">Section F</SelectItem>
+                              <SelectItem value="G">Section G</SelectItem>
+                              <SelectItem value="H">Section H</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
@@ -511,9 +513,7 @@ export default function PassPage() {
                           </SelectTrigger>
                           <SelectContent className="bg-gray-800 border-gray-700 text-white">
                             <SelectItem value="pass-purchase">Pass Purchase</SelectItem>
-                            <SelectItem value="group-booking">Group Booking</SelectItem>
                             <SelectItem value="dietary-requirements">Dietary Requirements</SelectItem>
-                            <SelectItem value="payment-options">Payment Options</SelectItem>
                             <SelectItem value="refund-policy">Refund Policy</SelectItem>
                             <SelectItem value="general-inquiry">General Inquiry</SelectItem>
                           </SelectContent>

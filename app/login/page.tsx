@@ -1,29 +1,45 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { FcGoogle } from "react-icons/fc"
+import { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { FcGoogle } from "react-icons/fc";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const { login, googleLogin } = useAuth();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsLoading(true)
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      await login(email, password);
+      router.push("/dashboard");
+    } catch (error) {
+      alert("Login failed!");
+    }
+    setIsLoading(false);
+  };
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false)
-      // Handle login logic here
-    }, 1500)
-  }
+  const handleGoogleLogin = async () => {
+    setIsLoading(true);
+    try {
+      await googleLogin();
+      router.push("/dashboard");
+    } catch (err) {
+      alert("Google sign-in failed");
+    }
+    setIsLoading(false);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 px-4 py-24">
@@ -37,58 +53,20 @@ export default function LoginPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <Button variant="outline" className="w-full border-gray-700 bg-gray-800 hover:bg-gray-700 text-white">
-                  <FcGoogle className="mr-2 h-4 w-4" />
-                  Sign in with Google
-                </Button>
-              </div>
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <span className="w-full border-t border-gray-700"></span>
-                </div>
-                <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-gray-800 px-2 text-gray-400">Or continue with</span>
-                </div>
-              </div>
+              <Button variant="outline" onClick={handleGoogleLogin} className="w-full border-gray-700 bg-gray-800 hover:bg-gray-700 text-white">
+                <FcGoogle className="mr-2 h-4 w-4" />
+                Sign in with Google
+              </Button>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-white">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="m@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
-                  />
+                <div>
+                  <Label htmlFor="email" className="text-white">Email</Label>
+                  <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="bg-gray-700 border-gray-600 text-white" />
                 </div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <Label htmlFor="password" className="text-white">
-                      Password
-                    </Label>
-                    <Link href="/forgot-password" className="text-xs text-purple-400 hover:text-purple-300">
-                      Forgot password?
-                    </Link>
-                  </div>
-                  <Input
-                    id="password"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
-                  />
+                <div>
+                  <Label htmlFor="password" className="text-white">Password</Label>
+                  <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="bg-gray-700 border-gray-600 text-white" />
                 </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white"
-                  disabled={isLoading}
-                >
+                <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white" disabled={isLoading}>
                   {isLoading ? "Signing in..." : "Sign in"}
                 </Button>
               </form>
@@ -105,5 +83,5 @@ export default function LoginPage() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
