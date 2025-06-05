@@ -19,29 +19,29 @@ const teamMembers = [
     },
   },
   {
-    name: "Karishma Khatri",
+    name: "Madison Beer",
     role: "Decoration Manager",
-    photo: "/karishma.jpeg",
+    photo: "/madison.png",
     description: "Designed and implemented all decorations and visual elements for the event.",
     social: {
-      instagram: "https://www.instagram.com/karishmalovesraita?igsh=MW9sY3BlcDNtd283OA==",
+      instagram: "https://www.instagram.com/madisonbeer?igsh=NXAxam95bXczMG93",
       twitter: "https://twitter.com",
     },
   },
   {
-    name: "Jennifer Minzz",
+    name: "Kanya West",
     role: "Social Media Manager",
-    photo: "/jenni.jpeg",
+    photo: "/kanya.png",
     description: "Managed fundraising and budget allocation for all farewell activities.",
     social: {
-      instagram: "https://www.instagram.com/_.jennifferrr._?igsh=dmF6enMxZmd1dTMz",
+      instagram: "https://www.instagram.com/ye?igsh=MWJ1eDN2aGFkbmF6aA==",
       facebook: "https://facebook.com",
     },
   },
   {
-    name: "Gauri Sharma",
+    name: "Sabrina Carpenter",
     role: "Performancer Coordinator",
-    photo: "/gauri.jpeg",
+    photo: "/sabrina.png",
     description: "Created and curated all digital content for the farewell website and social media.",
     social: {
       instagram: "https://www.instagram.com/_gaurisharma._?igsh=enR0dTF0dHRzajI4",
@@ -90,7 +90,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-3">
               <SocialIcon icon={<Facebook size={18} />} href="https://facebook.com" />
-              <SocialIcon icon={<Instagram size={18} />} href="https://instagram.com" />
+              <SocialIcon icon={<Instagram size={18} />} href="https://www.instagram.com/reminisce_2k25?igsh=Nm4yM2Q5ZnRyMGwy" />
               <SocialIcon icon={<Twitter size={18} />} href="https://twitter.com" />
               <SocialIcon icon={<Linkedin size={18} />} href="https://linkedin.com" />
             </div>
@@ -115,7 +115,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Mail className="h-5 w-5 text-purple-400 mr-2 mt-0.5" />
-                <span className="text-gray-400">farewell@school.edu</span>
+                <span className="text-gray-400">reminisce@school.edu</span>
               </li>
               <li className="flex items-start">
                 <Phone className="h-5 w-5 text-purple-400 mr-2 mt-0.5" />
@@ -123,7 +123,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-purple-400 mr-2 mt-0.5" />
-                <span className="text-gray-400">123 School Street, City, State 12345</span>
+                <span className="text-gray-400">Street-30 Sector-10 , Bhilai</span>
               </li>
             </ul>
           </div>

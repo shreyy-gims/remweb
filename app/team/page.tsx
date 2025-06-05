@@ -71,11 +71,11 @@ const teamMembers = [
   },
   {
     id: 5,
-    name: "Vinayak Sharma",
+    name: "P.Diddy",
     role: "Technical Director",
-    photo: "/vinayak.jpeg",
+    photo: "/diddy.png",
     description: "Managed all technical aspects including sound, lighting, and audiovisual elements.",
-    bio: "Vinayak is the go-to person for all things technical. His expertise in sound engineering and lighting design has elevated the production quality of numerous school events.",
+    bio: "Diddy is the go-to person for all things technical. His expertise in sound engineering and lighting design has elevated the production quality of numerous school events.",
     achievements: ["Tech Club President", "Robotics Competition Winner", "AV Team Lead"],
     social: {
       instagram: "https://instagram.com/david_tech",
@@ -86,9 +86,9 @@ const teamMembers = [
   },
   {
     id: 6,
-    name: "Shreya Bais",
+    name: "Billi Eilliesh",
     role: "Food & Catering Manager",
-    photo: "/shreya.jpeg",
+    photo: "/billie.png",
     description: "Coordinated with caterers and managed all food-related arrangements for the event.",
     bio: "Olivia has a keen interest in culinary arts and event hospitality. Her meticulous planning ensures that all dietary preferences are accommodated while maintaining high-quality food service.",
     achievements: ["Culinary Club Founder", "Food Festival Organizer", "Hospitality Management Certificate"],

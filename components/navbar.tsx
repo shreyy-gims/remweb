@@ -13,12 +13,12 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/videos", label: "Videos" },
   { href: "/voting", label: "Voting" },
-  { href: "/event-details", label: "Event Details" },
+  { href: "/event-details", label: "Event" },
   { href: "/gallery", label: "Gallery" },
   { href: "/sponsors", label: "Sponsors" },
   { href: "/games", label: "Games" },
-  { href: "/team", label: "Our Team" },
-  { href: "/pass", label: "Get Pass" },
+  { href: "/team", label: "Team" },
+  { href: "/pass", label: "Passes" },
 ]
 
 export default function Navbar() {
@@ -44,9 +44,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold text-white">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
-            Reminisce 2k25
-          </span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Reminisce</span>
         </Link>
 
         {isMobile ? (
@@ -69,7 +67,7 @@ function DesktopNav({ isLoggedIn, currentPath }) {
             href={link.href}
             className={`text-sm transition-colors hover:text-purple-400 ${
               currentPath === link.href ? "text-purple-400" : "text-gray-300"
-            } ${link.href === "/pass" ? "bg-purple-600/20 px-3 py-1 rounded-full border border-purple-500/30" : ""}`}
+            }`}
           >
             {link.label}
           </Link>
@@ -156,7 +154,7 @@ function MobileNav({ isLoggedIn, currentPath }) {
                   currentPath === link.href
                     ? "bg-purple-600 text-white"
                     : "text-gray-300 hover:bg-gray-800 hover:text-white"
-                } ${link.href === "/pass" ? "border border-purple-500/30" : ""}`}
+                }`}
               >
                 {link.label}
               </Link>
@@ -165,7 +163,7 @@ function MobileNav({ isLoggedIn, currentPath }) {
 
           <div className="flex justify-center gap-4 py-4 border-t border-b border-gray-800">
             <Link
-              href="https://www.instagram.com/reminisce_2k25?igsh=Nm4yM2Q5ZnRyMGwy"
+              href="https://www.instagram.com/reminisce_2k25?igsh=Nm4yM2Q5ZnRyMGwy5"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors"
@@ -174,7 +172,7 @@ function MobileNav({ isLoggedIn, currentPath }) {
               <span>Instagram</span>
             </Link>
             <Link
-              href="https://chat.whatsapp.com/JpnsDEX9mJ37VgroUT9vz6"
+              href="https://chat.whatsapp.com/farewell2025"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-gray-300 hover:text-green-500 transition-colors"

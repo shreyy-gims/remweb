@@ -21,6 +21,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-4">Welcome, {user?.email}</h1>
+      <p>now click on reminisce at left top</p>
       <Button onClick={logout} className="bg-red-600 hover:bg-red-700">
         Logout
       </Button>

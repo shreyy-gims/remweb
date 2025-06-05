@@ -48,9 +48,9 @@ export default function EventDetails() {
                 <Clock className="h-6 w-6 text-purple-500 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-white">Time</h3>
-                  <p className="text-gray-300">5:00 PM - 10:00 PM</p>
+                  <p className="text-gray-300">Soon</p>
                   <p className="text-gray-400 text-sm mt-1">
-                    Doors open at 4:30 PM. Please arrive early to avoid any last-minute rush.
+                    Doors open at Soon. Please arrive early to avoid any last-minute rush.
                   </p>
                 </div>
               </div>
