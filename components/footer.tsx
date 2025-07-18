@@ -31,7 +31,7 @@ const teamMembers = [
   {
     name: "Karishma Khatri",
     role: "Decoration Manager",
-    photo: "/karishmalog.jpeg",
+    photo: "/karishmanew.jpeg",
     description: "Managed fundraising and budget allocation for all farewell activities.",
     social: {
       instagram: "https://www.instagram.com/karishmalovesraita?igsh=amg0enlwaXl6ZTY=",
