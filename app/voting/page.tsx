@@ -202,22 +202,28 @@ export default function VotingPage() {
             selected for their unique achievements and skills.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-purple-600 hover:bg-purple-700 text-white">
-              <Link href="/voting/nominate" className="flex items-center">
-                <UserPlus className="mr-2 h-4 w-4" />
-                Submit a Nomination
-              </Link>
-            </Button>
-            <div className="flex items-center justify-center bg-gray-800 px-4 py-2 rounded-md border border-gray-700">
-              <Clock className="h-4 w-4 text-yellow-500 mr-2" />
-              <span className="text-gray-300 text-sm">
-                Voting ends in:{" "}
-                <span className="text-white font-semibold">
-                  {timeRemaining.days}d {timeRemaining.hours}h {timeRemaining.minutes}m
-                </span>
-              </span>
-            </div>
-          </div>
+  <Button asChild className="bg-purple-600 hover:bg-purple-700 text-white">
+    <Link 
+      href="https://forms.gle/QNiXs6TNNqzWapd16" 
+      target="_blank"  // opens in new tab
+      rel="noopener noreferrer" // security best practice
+      className="flex items-center"
+    >
+      <UserPlus className="mr-2 h-4 w-4" />
+      Submit a Nomination
+    </Link>
+  </Button>
+  <div className="flex items-center justify-center bg-gray-800 px-4 py-2 rounded-md border border-gray-700">
+    <Clock className="h-4 w-4 text-yellow-500 mr-2" />
+    <span className="text-gray-300 text-sm">
+      Voting ends in:{" "}
+      <span className="text-white font-semibold">
+        {timeRemaining.days}d {timeRemaining.hours}h {timeRemaining.minutes}m
+      </span>
+    </span>
+  </div>
+</div>
+
         </motion.div>
 
         {/* Featured Mr. and Miss Farewell Section */}

@@ -26,12 +26,12 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Karishma Khatri",
+    name: "Aastha Rao",
     role: "Decoration Manager",
-    photo: "/karishma.jpeg",
+    photo: "/sabrina.png",
     description: "Designed and implemented all decorations and visual elements for the event.",
     bio: "Sophia is known for her creative vision and artistic talents. She has transformed ordinary spaces into extraordinary venues for multiple school events with her innovative decoration ideas.",
-    achievements: ["Art Competition Winner", "Design Club President", "School Magazine Cover Designer"],
+    achievements: ["House Prefect", "Design Club President", "School Magazine Cover Designer"],
     social: {
       instagram: "https://www.instagram.com/karishmalovesraita?igsh=MW9sY3BlcDNtd283OA==",
       whatsapp: "https://wa.me/1234567891",
@@ -41,9 +41,9 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "S.Jennifer",
-    role: "Performance Head",
-    photo: "/jenni.jpeg",
+    name: "Vinayak Thakur",
+    role: "ON-Ground Manager",
+    photo: "/vinayak.jpeg",
     description: "Managed fundraising and budget allocation for all farewell activities.",
     bio: "Jennifer has a talent for financial management and fundraising. Her strategic approach to budgeting has helped maximize resources for school events while ensuring fiscal responsibility.",
     achievements: ["Treasurer of Student Council", "Economics Club Leader", "Fundraising Record Holder"],
@@ -56,11 +56,11 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Gauri Sharma",
+    name: "Gaurav",
     role: "Performance Assist",
-    photo: "/gauri.jpeg",
+    photo: "/gaurav1.jpeg",
     description: "Created and curated all digital content for the farewell website and social media.",
-    bio: "Gauri has a passion for digital media and storytelling. Her ability to capture the essence of events through compelling content has made her an invaluable asset to the team.",
+    bio: "Gaurav has a passion for digital media and storytelling. Her ability to capture the essence of events through compelling content has made her an invaluable asset to the team.",
     achievements: ["Digital Media Award", "School Blog Editor", "Photography Contest Winner"],
     social: {
       instagram: "https://www.instagram.com/_gaurisharma._?igsh=enR0dTF0dHRzajI4",
@@ -71,9 +71,9 @@ const teamMembers = [
   },
   {
     id: 5,
-    name: "Shaurya Singh",
+    name: "Vanshika",
     role: "Collection Head",
-    photo: "/shaurya.jpeg",
+    photo: "/placeholder.svg?height=300&width=300",
     description: "Managed all technical aspects including sound, lighting, and audiovisual elements.",
     bio: "Diddy is the go-to person for all things technical. His expertise in sound engineering and lighting design has elevated the production quality of numerous school events.",
     achievements: ["Tech Club President", "Robotics Competition Winner", "AV Team Lead"],
@@ -86,9 +86,9 @@ const teamMembers = [
   },
   {
     id: 6,
-    name: "Karan",
+    name: "Shreya Bais",
     role: "Food & Catering Manager",
-    photo: "/ketan.jpeg",
+    photo: "/placeholder.svg?height=300&width=300",
     description: "Coordinated with caterers and managed all food-related arrangements for the event.",
     bio: "Olivia has a keen interest in culinary arts and event hospitality. Her meticulous planning ensures that all dietary preferences are accommodated while maintaining high-quality food service.",
     achievements: ["Culinary Club Founder", "Food Festival Organizer", "Hospitality Management Certificate"],
@@ -116,9 +116,9 @@ const teamMembers = [
   },
   {
     id: 8,
-    name: "Yagini",
+    name: "Ashmita",
     role: "Performance Assist",
-    photo: "/yashi.jpeg",
+    photo: "/placeholder.svg?height=300&width=300",
     description: "Handled venue arrangements, transportation, and overall event logistics.",
     bio: "Ava excels at solving complex logistical challenges. Her organizational skills ensure that all practical aspects of events run without a hitch.",
     achievements: ["Event Planning Certificate", "School Trip Organizer", "Volunteer Coordinator"],
@@ -131,9 +131,9 @@ const teamMembers = [
   },
   {
     id: 9,
-    name: "Ketan Dubey",
+    name: "Satyam",
     role: "Social Media Head",
-    photo: "/karan.jpeg",
+    photo: "/placeholder.svg?height=300&width=300",
     description: "Curated and managed all performances and entertainment activities for the farewell.",
     bio: "Ethan has a background in performing arts and a talent for discovering and showcasing student performances. His entertainment programs are always the highlight of school events.",
     achievements: ["Drama Club President", "Talent Show Director", "Music Competition Winner"],
@@ -147,7 +147,7 @@ const teamMembers = [
   {
     id: 10,
     role: "Social Media Manager",
-    name: "Empty Slot",
+    name: "GAuri Singh",
     photo: "/placeholder.svg?height=300&width=300",
     description: "Managed all social media accounts and online promotion for the farewell event.",
     bio: "Mia has a knack for creating engaging social media content that resonates with students. Her strategic approach to digital marketing has significantly increased event participation.",
@@ -161,7 +161,7 @@ const teamMembers = [
   },
   {
     id: 11,
-    name: "Empty Slot",
+    name: "Akshya Shukla",
     role: "Volunteer Coordinator",
     photo: "/placeholder.svg?height=300&width=300",
     description: "Recruited and managed student volunteers for various farewell activities.",
@@ -176,7 +176,7 @@ const teamMembers = [
   },
   {
     id: 12,
-    name: "Empty Slot",
+    name: "Jennifer",
     role: "Sponsorship Coordinator",
     photo: "/placeholder.svg?height=300&width=300",
     description: "Secured sponsorships and partnerships to support the farewell event.",
@@ -247,60 +247,7 @@ export default function TeamPage() {
           </motion.div>
 
           {/* Fee Details Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="max-w-md mx-auto mb-16"
-          >
-            <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border border-purple-500/30 overflow-hidden">
-              <CardContent className="p-0">
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">Farewell Pass Details</h3>
-                  <p className="text-gray-400 text-sm mb-4">Your all-inclusive pass to the farewell celebration</p>
-
-                  <div className="space-y-4">
-                    <FeeItem
-                      title="Food & Refreshments"
-                      amount={10}
-                      description="Gourmet dinner and refreshments throughout the event"
-                      icon={<Coffee />}
-                      color="text-yellow-500"
-                    />
-                    <FeeItem
-                      title="Venue & Decorations"
-                      amount={20}
-                      description="Premium venue with elegant decorations"
-                      icon={<Palette />}
-                      color="text-blue-500"
-                    />
-                    <FeeItem
-                      title="Entertainment"
-                      amount={30}
-                      description="Live music, performances and activities"
-                      icon={<Music />}
-                      color="text-green-500"
-                    />
-                    <FeeItem
-                      title="Souvenirs & Gifts"
-                      amount={40}
-                      description="Personalized mementos to remember the occasion"
-                      icon={<Heart />}
-                      color="text-red-500"
-                    />
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-gray-700 flex justify-between items-center">
-                    <div>
-                      <p className="text-gray-400 text-sm">Total Amount</p>
-                      <p className="text-2xl font-bold text-white">100</p>
-                    </div>
-                    <Button className="bg-purple-600 hover:bg-purple-700">Get Your Pass</Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+          
         </motion.div>
 
         {/* Team Filters */}
