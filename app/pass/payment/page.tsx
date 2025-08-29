@@ -28,14 +28,15 @@ export default function PaymentPage() {
     }
   }
 
-  const handleDownloadQR = () => {
-    const link = document.createElement("a")
-    link.href = "/qrcode.jpeg"
-    link.download = "/qrcode.jpeg"
-    document.body.appendChild(link)
-    link.click()
-    link.remove()
-  }
+const handleDownloadQR = () => {
+  const link = document.createElement("a")
+  link.href = "/qrcode.jpeg"   // public file path
+  link.download = "qrcode.jpeg" // just filename, not path
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 
   const shareInfo = async () => {
     const url = typeof window !== "undefined" ? window.location.href : ""
@@ -106,7 +107,7 @@ export default function PaymentPage() {
               <CardContent className="flex flex-col items-center">
                 <div className="relative rounded-xl border border-purple-500/30 bg-black/30 p-4">
                   <Image
-                    src="/images/qr-code.png"
+                    src="/qrcode.jpeg"
                     alt="Farewell Pass Payment QR code"
                     width={320}
                     height={320}

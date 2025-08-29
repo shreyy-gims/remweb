@@ -56,11 +56,11 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Gaurav",
+    name: "Gauri Sharma",
     role: "Performance Assist",
-    photo: "/gaurav1.jpeg",
+    photo: "/gauri.jpeg",
     description: "Created and curated all digital content for the farewell website and social media.",
-    bio: "Gaurav has a passion for digital media and storytelling. Her ability to capture the essence of events through compelling content has made her an invaluable asset to the team.",
+    bio: "Gauri has a passion for digital media and storytelling. Her ability to capture the essence of events through compelling content has made her an invaluable asset to the team.",
     achievements: ["Digital Media Award", "School Blog Editor", "Photography Contest Winner"],
     social: {
       instagram: "https://www.instagram.com/_gaurisharma._?igsh=enR0dTF0dHRzajI4",
