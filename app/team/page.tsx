@@ -26,9 +26,9 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Aastha Rao",
+    name: "Karishma Khatri",
     role: "Decoration Manager",
-    photo: "/sabrina.png",
+    photo: "/karishmanew.jpeg",
     description: "Designed and implemented all decorations and visual elements for the event.",
     bio: "Sophia is known for her creative vision and artistic talents. She has transformed ordinary spaces into extraordinary venues for multiple school events with her innovative decoration ideas.",
     achievements: ["House Prefect", "Design Club President", "School Magazine Cover Designer"],

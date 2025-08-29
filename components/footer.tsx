@@ -29,12 +29,12 @@ const teamMembers = [
     },
   },
   {
-    name: "Soon",
+    name: "Karishma Khatri",
     role: "Decoration Manager",
-    photo: "/placeholder.svg?height=300&width=300",
+    photo: "/karishmanew.jpeg",
     description: "Managed fundraising and budget allocation for all farewell activities.",
     social: {
-      instagram: "https://",
+      instagram: "https://www.instagram.com/karishmalovesraita?igsh=amg0enlwaXl6ZTY=",
       facebook: "https://facebook.com",
     },
   },

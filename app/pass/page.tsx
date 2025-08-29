@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
+import Link from "next/link"
 import {
   Star,
   Coffee,
@@ -79,20 +80,20 @@ const passAdvantages = [
 const testimonials = [
   {
     name: "Pakhi Singh",
-    class: "Class 12-H",
+    class: "Class 12-A",
     image: "/placeholder.svg?height=60&width=60",
     text: "The farewell pass was totally worth it! The food was amazing and the photo sessions were professional. Best memories ever!",
     rating: 5,
   },
   {
-    name: "Rituraj",
+    name: "Annora Lakra",
     class: "Class 12-B",
     image: "/placeholder.svg?height=60&width=60",
     text: "I loved the VIP treatment and the exclusive souvenirs. The yearbook is something I'll treasure forever.",
     rating: 5,
   },
   {
-    name: "Annora Lakra",
+    name: "Rituraj Sharma",
     class: "Class 12-F",
     image: "/placeholder.svg?height=60&width=60",
     text: "The entertainment was top-notch! The live band and DJ kept everyone dancing all night. Highly recommend!",
@@ -105,7 +106,7 @@ const faqs = [
   {
     question: "What's included in the farewell pass?",
     answer:
-      "The pass includes premium dining, entertainment, professional photography, exclusive souvenirs, VIP experience, and access to all event activities.",
+      "The pass includes premium dining, entertainment, professional photography, VIP experience, and access to all event activities.",
   },
   {
     question: "Can I get a refund if I can't attend?",
@@ -118,9 +119,9 @@ const faqs = [
       "Currently, we offer one comprehensive pass that includes all benefits. We believe in providing the best experience for everyone.",
   },
   {
-    question: "How do I collect my pass and souvenirs?",
+    question: "How do I collect my pass ?",
     answer:
-      "Passes will be distributed during school hours starting one week before the event. Souvenirs will be given during the farewell ceremony.",
+      "Passes will be distributed during school hours starting one week before the event.",
   },
   {
     question: "Can parents attend with the pass?",
@@ -196,13 +197,13 @@ export default function PassPage() {
               professional photography, and lifetime memories - all included in one comprehensive pass.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
-                Get Your Pass - ₹100
+              <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
+                <Link href="/pass/payment">Get Your Pass - ₹1,100</Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-purple-500/50 text-purple-400 hover:bg-purple-900/20"
+                className="border-purple-500/50 text-purple-400 hover:bg-purple-900/20 bg-transparent"
               >
                 Send Inquiry
               </Button>
@@ -285,27 +286,27 @@ export default function PassPage() {
                     <h3 className="text-2xl font-bold text-white mb-6">What's Included</h3>
                     <div className="space-y-4">
                       <PricingItem
-                        title="Premium Food & Beverages"
-                        amount={10}
+                        title="Premium Food & Venue"
+                        amount={650}
                         description="3-course gourmet meal, premium drinks, live food stations"
                         icon={<Coffee />}
                       />
                       <PricingItem
                         title="Venue & Decorations"
-                        amount={20}
+                        amount={200}
                         description="Elegant venue with professional decorations and lighting"
                         icon={<Palette />}
                       />
                       <PricingItem
                         title="Entertainment Package"
-                        amount={30}
+                        amount={150}
                         description="Live band, DJ, interactive games, and surprise acts"
                         icon={<Music />}
                       />
                       <PricingItem
-                        title="Souvenirs & Photography"
-                        amount={40}
-                        description="Professional photos, yearbook, custom merchandise"
+                        title="Photography"
+                        amount={100}
+                        description="Professional photos, yearbook"
                         icon={<Camera />}
                       />
                     </div>
@@ -313,7 +314,7 @@ export default function PassPage() {
 
                   <div className="flex flex-col justify-center">
                     <div className="text-center p-8 bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl border border-purple-500/30">
-                      <div className="text-6xl font-bold text-white mb-2">₹100</div>
+                      <div className="text-6xl font-bold text-white mb-2">₹1,100</div>
                       <p className="text-purple-300 mb-6">All-Inclusive Pass</p>
                       <div className="space-y-3 mb-6">
                         <div className="flex items-center justify-center text-green-400">
@@ -329,7 +330,9 @@ export default function PassPage() {
                           <span>7-Day Refund Policy</span>
                         </div>
                       </div>
-                      <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white">Reserve Your Pass</Button>
+                      <Button asChild className="w-full bg-purple-600 hover:bg-purple-700 text-white">
+                        <Link href="/pass/payment">Reserve Your Pass</Link>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -368,8 +371,8 @@ export default function PassPage() {
                         <Phone className="h-5 w-5 text-purple-400 mr-3 mt-1" />
                         <div>
                           <p className="text-white font-medium">Phone</p>
-                          <p className="text-gray-400">+91 93406 79336</p>
                           <p className="text-gray-400">+91 80858 51573</p>
+                          <p className="text-gray-400">+91 91090 71032</p>
                         </div>
                       </div>
                       <div className="flex items-start">
@@ -388,7 +391,7 @@ export default function PassPage() {
                           <Button
                             variant="outline"
                             size="sm"
-                            className="mt-2 border-green-500/50 text-green-400 hover:bg-green-900/20"
+                            className="mt-2 border-green-500/50 text-green-400 hover:bg-green-900/20 bg-transparent"
                           >
                             Join WhatsApp Group
                           </Button>
@@ -492,8 +495,6 @@ export default function PassPage() {
                               <SelectItem value="D">Section D</SelectItem>
                               <SelectItem value="E">Section E</SelectItem>
                               <SelectItem value="F">Section F</SelectItem>
-                              <SelectItem value="G">Section G</SelectItem>
-                              <SelectItem value="H">Section H</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
@@ -513,7 +514,9 @@ export default function PassPage() {
                           </SelectTrigger>
                           <SelectContent className="bg-gray-800 border-gray-700 text-white">
                             <SelectItem value="pass-purchase">Pass Purchase</SelectItem>
+                            <SelectItem value="group-booking">Group Booking</SelectItem>
                             <SelectItem value="dietary-requirements">Dietary Requirements</SelectItem>
+                            <SelectItem value="payment-options">Payment Options</SelectItem>
                             <SelectItem value="refund-policy">Refund Policy</SelectItem>
                             <SelectItem value="general-inquiry">General Inquiry</SelectItem>
                           </SelectContent>
@@ -679,14 +682,16 @@ export default function PassPage() {
               Don't miss out on the ultimate farewell experience. Get your pass today and be part of something special.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
-                <Sparkles className="mr-2 h-5 w-5" />
-                Get Your Pass Now
+              <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
+                <Link href="/pass/payment">
+                  <Sparkles className="mr-2 h-5 w-5" />
+                  Get Your Pass Now
+                </Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-purple-500/50 text-purple-400 hover:bg-purple-900/20"
+                className="border-purple-500/50 text-purple-400 hover:bg-purple-900/20 bg-transparent"
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Ask a Question
