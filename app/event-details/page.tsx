@@ -18,7 +18,7 @@ export default function EventDetailsPage() {
         >
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Event Details</h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            This is a Demo Webpage , not even a single information is correct here!
+            Deails and Rules are given below
           </p>
         </motion.div>
 
@@ -58,15 +58,11 @@ export default function EventDetailsPage() {
             <Card className="bg-gray-800 border-gray-700">
               <CardContent className="p-6">
                 <div className="rounded-xl overflow-hidden">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3342.3967840614237!2d81.32917497477072!3d21.18290338050517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a293cc87a93fbd3%3A0xa0147ca4f63aed89!2sBSP%20Senior%20Secondary%20School%20Sector%2010%2C%20Bhilai!5e1!3m2!1sen!2sin!4v1748399516175!5m2!1sen!2sin"
-    width="100%"
-    height="250"
-    style={{ border: 0 }}
-    allowFullScreen
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.6195558698687!2d81.2376697793457!3d21.16753340000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a293fe3f35d17ab%3A0x178c94661612c87b!2sPrithvi%20Palace!5e0!3m2!1sen!2sin!4v1756584922465!5m2!1sen!2sin" 
+  width="400" 
+  height="300"
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
                 <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white">Get Directions</Button>

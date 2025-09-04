@@ -20,7 +20,7 @@ const teamMembers = [
   },
   {
     name: "Vinayak Thakur",
-    role: "Collection Head",
+    role: "On-Ground Head",
     photo: "/vinayak.jpeg",
     description: "Managed fundraising and budget allocation for all farewell activities.",
     social: {
@@ -39,9 +39,9 @@ const teamMembers = [
     },
   },
   {
-    name: "Soon",
-    role: "On-Ground Head",
-    photo: "/placeholder.svg?height=300&width=300",
+    name: "Purva Singh",
+    role: "Social-Media Head",
+    photo: "/poorva.jpeg",
     description: "Created and curated all digital content for the farewell website and social media.",
     social: {
       instagram: "https://www.instagram.com/vinayakk.750?utm_source=ig_web_button_share_sheet&igsh=d2N0dmdyenpzYm0x",
@@ -119,7 +119,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start">
                 <Phone className="h-5 w-5 text-purple-400 mr-2 mt-0.5" />
-                <span className="text-gray-400">(123) 456-7890</span>
+                <span className="text-gray-400">80858 51573</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-purple-400 mr-2 mt-0.5" />

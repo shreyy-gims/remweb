@@ -25,7 +25,7 @@ export default function EventDetails() {
                 <MapPin className="h-6 w-6 text-purple-500 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-white">Venue</h3>
-                  <p className="text-gray-300">Gonna Reveal Soon</p>
+                  <p className="text-gray-300">Prithvi Palace , Durg</p>
                   <p className="text-gray-400 text-sm mt-1">
                     The venue is equipped with state-of-the-art sound and lighting systems to make this farewell
                     unforgettable.
