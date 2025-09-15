@@ -28,8 +28,8 @@ const quizQuestions = [
   {
     id: 1,
     type: "multiple-choice",
-    question: "Why is our canteen still closed??",
-    options: ["Teachers nahi chah rhe", "Principal ke karan", "Budget ke Karan", "Bunk na mar pae bache isliye"],
+    question: "Who Scored 1st Rank in 10th?",
+    options: ["S Jyotsana", "Vernika Yadav", "Vanshika Tiwari", "Satyam Kumbhkar"],
     correctAnswer: 1,
     difficulty: "easy",
     points: 10,
@@ -48,8 +48,8 @@ const quizQuestions = [
   {
     id: 3,
     type: "true-false",
-    question: "Our.",
-    options: ["1985", "1990", "1995", "2000"],
+    question: "No. of Question in TQT",
+    options: ["150", "100", "125", "120"],
     correctAnswer: 2,
     difficulty: "easy",
     points: 10,

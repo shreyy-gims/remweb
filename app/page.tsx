@@ -77,23 +77,23 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <NomineeCard
-              name="Jhanvi "
-              photo="/janvi.jpeg"
-              category="Most Likely to Succeed"
+              name="Avishi Dubey"
+              photo="/avishi3.jpeg"
+              category="Miss Farewell"
               achievements={["Class President", "Science Olympiad Winner", "Perfect Attendance"]}
               skills={["Leadership", "Public Speaking", "Problem Solving"]}
             />
             <NomineeCard
-              name="Trial 2"
-              photo="/closedpng.png"
-              category="Most Creative"
-              achievements={["Art Competition Winner", "School Magazine Editor", "Drama Club Lead"]}
-              skills={["Painting", "Writing", "Acting"]}
+              name="Maria Kujur"
+              photo="/maria2.jpeg"
+              category="Miss Farewell"
+              achievements={["Class 11th Arts Topper", "Lead Dancer"]}
+              skills={["Sprinting", "Leadership", "Dancing"]}
             />
             <NomineeCard
-              name="Trial 3"
-              photo="/closedpng.png"
-              category="Most Athletic"
+              name="Gauri Sharma"
+              photo="/gauri2.jpeg"
+              category="Miss Eve"
               achievements={["Basketball Team Captain", "Track & Field Champion", "Sports MVP"]}
               skills={["Basketball", "Running", "Team Leadership"]}
             />

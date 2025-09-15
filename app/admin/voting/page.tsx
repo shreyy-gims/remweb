@@ -21,19 +21,19 @@ export default function VotingControlPage() {
   const [votingEnabled, setVotingEnabled] = useState(true)
 
   const [mrFarewellCandidates] = useState<Candidate[]>([
-    { id: "1", name: "Akshat Singh", class: "12A", votes: 145, photo: "/placeholder.svg?height=100&width=100" },
-    { id: "2", name: "Rohit Kumar", class: "12B", votes: 132, photo: "/placeholder.svg?height=100&width=100" },
-    { id: "3", name: "Vikash Singh", class: "12C", votes: 98, photo: "/placeholder.svg?height=100&width=100" },
-    { id: "4", name: "Amit Patel", class: "12D", votes: 87, photo: "/placeholder.svg?height=100&width=100" },
-    { id: "5", name: "Ravi Gupta", class: "12E", votes: 76, photo: "/placeholder.svg?height=100&width=100" },
+    { id: "1", name: "Vinayak Singh", class: "12A", votes: 145, photo: "/placeholder.svg?height=100&width=100" },
+    { id: "2", name: "Ansh Mishra", class: "12B", votes: 132, photo: "/placeholder.svg?height=100&width=100" },
+    { id: "3", name: "Shaurya Singh", class: "12C", votes: 98, photo: "/placeholder.svg?height=100&width=100" },
+    
+    
   ])
 
   const [mrsFarewellCandidates] = useState<Candidate[]>([
-    { id: "6", name: "Priya Sharma", class: "12A", votes: 156, photo: "/placeholder.svg?height=100&width=100" },
-    { id: "7", name: "Anita Kumar", class: "12B", votes: 143, photo: "/placeholder.svg?height=100&width=100" },
-    { id: "8", name: "Sneha Singh", class: "12C", votes: 121, photo: "/placeholder.svg?height=100&width=100" },
-    { id: "9", name: "Kavya Patel", class: "12D", votes: 109, photo: "/placeholder.svg?height=100&width=100" },
-    { id: "10", name: "Ritika Gupta", class: "12E", votes: 95, photo: "/placeholder.svg?height=100&width=100" },
+    { id: "7", name: "Maria kujur", class: "12A", votes: 156, photo: "/placeholder.svg?height=100&width=100" },
+    { id: "8", name: "Avishi Dubey", class: "12B", votes: 143, photo: "/placeholder.svg?height=100&width=100" },
+    { id: "9", name: "Anushka Deotale", class: "12C", votes: 121, photo: "/placeholder.svg?height=100&width=100" },
+    
+    
   ])
 
   const totalVotes = [...mrFarewellCandidates, ...mrsFarewellCandidates].reduce(
