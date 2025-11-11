@@ -41,11 +41,11 @@ export default function EventDetailsPage() {
                   </li>
                   <li className="flex items-start">
                     <span className="h-2 w-2 rounded-full bg-purple-500 mt-2 mr-2 flex-shrink-0"></span>
-                    <span>Each student can bring two family members.</span>
+                    <span>Each student have to bring their own passes.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="h-2 w-2 rounded-full bg-purple-500 mt-2 mr-2 flex-shrink-0"></span>
-                    <span>Parking is available in the school's main parking lot.</span>
+                    <span>Parking is available in the venue</span>
                   </li>
                   <li className="flex items-start">
                     <span className="h-2 w-2 rounded-full bg-purple-500 mt-2 mr-2 flex-shrink-0"></span>
@@ -58,8 +58,7 @@ export default function EventDetailsPage() {
             <Card className="bg-gray-800 border-gray-700">
               <CardContent className="p-6">
                 <div className="rounded-xl overflow-hidden">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.6195558698687!2d81.2376697793457!3d21.16753340000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a293fe3f35d17ab%3A0x178c94661612c87b!2sPrithvi%20Palace!5e0!3m2!1sen!2sin!4v1756584922465!5m2!1sen!2sin" 
-  width="400" 
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3081.2384066392106!2d81.24573167435557!3d21.16271438052039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a293ea8ec9d49e5%3A0x846e6ae744238b5d!2sThe%20Roman%20Park%20-%20Best%20Wedding%20Destination%20Hotel!5e1!3m2!1sen!2sin!4v1759244675585!5m2!1sen!2sin" 
   height="300"
   loading="lazy" 
   referrerpolicy="no-referrer-when-downgrade"></iframe>

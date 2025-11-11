@@ -28,7 +28,7 @@ const nominees = [
   {
     id: 1,
     name: "Vanshika Tiwari",
-    photo: "/placeholder.svg?height=300&width=300",
+    photo: "/vanshika.jpeg",
     category: "Miss Farewell",
     achievements: ["Class President", "Science Olympiad Winner", "Perfect Attendance"],
     skills: ["Leadership", "Public Speaking", "Problem Solving"],
@@ -52,7 +52,7 @@ const nominees = [
   {
     id: 4,
     name: "Karishma Khatri",
-    photo: "/placeholder.svg?height=300&width=300",
+    photo: "/karishmanew.jpeg",
     category: "Best Dressed",
     achievements: ["Student Council President", "National Merit Scholar", "Volunteer of the Year"],
     skills: ["Leadership", "Organization", "Public Speaking"],

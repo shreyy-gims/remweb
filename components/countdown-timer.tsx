@@ -14,8 +14,8 @@ export default function CountdownTimer() {
   })
   const [isClient, setIsClient] = useState(false)
 
-  // Target date: November 26, 2025
-  const targetDate = new Date("2025-11-09T10:00:00").getTime()
+  // Target date: November 23, 2025
+  const targetDate = new Date("2025-11-23T10:00:00").getTime()
 
   useEffect(() => {
     setIsClient(true)

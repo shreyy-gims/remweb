@@ -25,7 +25,7 @@ export default function EventDetails() {
                 <MapPin className="h-6 w-6 text-purple-500 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-white">Venue</h3>
-                  <p className="text-gray-300">Prithvi Palace , Durg</p>
+                  <p className="text-gray-300">The Roman Park , Durg</p>
                   <p className="text-gray-400 text-sm mt-1">
                     The venue is equipped with state-of-the-art sound and lighting systems to make this farewell
                     unforgettable.
@@ -37,7 +37,7 @@ export default function EventDetails() {
                 <Calendar className="h-6 w-6 text-purple-500 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-white">Date</h3>
-                  <p className="text-gray-300">09 Nov,2025</p>
+                  <p className="text-gray-300">23 Nov,2025</p>
                   <p className="text-gray-400 text-sm mt-1">
                     Mark your calendars for this special day to celebrate with your friends and teachers.
                   </p>
@@ -105,9 +105,9 @@ export default function EventDetails() {
               <div className="absolute top-0 bottom-0 left-6 w-0.5 bg-purple-900"></div>
               <ul className="space-y-6">
                 <TimelineItem time="10:00 AM" event="Welcome & Registration" />
-                <TimelineItem time="11:00 AM" event="Opening Ceremony & Principal's Address" />
-                <TimelineItem time="12:00 PM" event="Cultural Performances" />
-                <TimelineItem time="01:00 PM" event="Dinner & Networking" />
+                <TimelineItem time="10:30 AM" event="Live Performances" />
+                <TimelineItem time="11:30 PM" event="Games and Ramp Walk" />
+                <TimelineItem time="12:30 PM" event="Dinner & Networking" />
                 <TimelineItem time="02:00 PM" event="Awards Ceremony" />
                 <TimelineItem time="03:00 PM" event="Dance & Celebration" />
                 <TimelineItem time="05:00 PM" event="Closing Ceremony" />
